@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <!-- The "before" plugin example -->
+    <type name="Magento\Theme\Block\Html\Breadcrumbs">
+        <plugin name="foggyline-plugged-breadcrumbs-beautify"
+                type="Foggyline\Plugged\Plugin\Breadcrumbs\Beautify"
+                sortOrder="10"/>
+    </type>
+
+    <!-- The "after" plugin example -->
+    <type name="Magento\Catalog\Api\Data\ProductInterface">
+        <plugin name="foggyline-plugged-catalog-product-flag-new"
+                type="Foggyline\Plugged\Plugin\Catalog\Product\FlagNew"
+                disabled="false"
+                sortOrder="10"/>
+    </type>
+
+    <!-- The "around" plugin example -->
+    <type name="Magento\Catalog\Block\Product\AbstractProduct">
+        <plugin name="foggyline-plugged-product-reviews"
+                type="Foggyline\Plugged\Plugin\Catalog\Product\SetRemoteReviews"
+                sortOrder="10"/>
+    </type>
+
+    <!-- The plugin sort order example -->
+    <type name="Magento\Catalog\Api\Data\ProductInterface">
+        <plugin name="foggyline-plugged-plugin-a"
+                type="Foggyline\Plugged\Plugin\PluginA"
+                disabled="false"
+                sortOrder="10"/>
+        <plugin name="foggyline-plugged-plugin-b"
+                type="Foggyline\Plugged\Plugin\PluginB"
+                disabled="false"
+                sortOrder="20"/>
+        <plugin name="foggyline-plugged-plugin-c"
+                type="Foggyline\Plugged\Plugin\PluginC"
+                disabled="false"
+                sortOrder="30"/>
+    </type>
+
+</config>
